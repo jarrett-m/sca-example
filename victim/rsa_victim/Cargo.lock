@@ -310,6 +310,7 @@ dependencies = [
  "rand 0.8.5",
  "rng",
  "rsa",
+ "thread",
 ]
 
 [[package]]
@@ -349,6 +350,12 @@ name = "subtle"
 version = "2.5.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "81cdd64d312baedb58e21336b31bc043b77e01cc99033ce76ef539f78e965ebc"
+
+[[package]]
+name = "thread"
+version = "0.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "afe9c0e959dd1e7b871071b51bc674380d1889cd4fed9f4b3b1f5c1772d9f796"
 
 [[package]]
 name = "typenum"
