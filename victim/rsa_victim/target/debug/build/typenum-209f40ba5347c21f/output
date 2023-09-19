@@ -1,0 +1,3 @@
+cargo:rerun-if-changed=build/main.rs
+cargo:rustc-env=TYPENUM_BUILD_CONSTS=/home/sca-example/victim/rsa_victim/target/debug/build/typenum-209f40ba5347c21f/out/consts.rs
+cargo:rustc-env=TYPENUM_BUILD_OP=/home/sca-example/victim/rsa_victim/target/debug/build/typenum-209f40ba5347c21f/out/op.rs

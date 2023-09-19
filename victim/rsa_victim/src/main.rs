@@ -1,7 +1,8 @@
 use rsa::{Pkcs1v15Encrypt, RsaPrivateKey, RsaPublicKey};
 use rand;
 use rsa::traits::PrivateKeyParts;
-use std::thread::sleep;
+use chrono::prelude::*;
+
 fn main() {
     // Generate an RSA key pair
     let mut rng = rand::thread_rng();
@@ -16,8 +17,10 @@ fn main() {
 
     // Decrypt
     let mut dec_data = priv_key.decrypt(Pkcs1v15Encrypt, &enc_data).expect("failed to decrypt");
-    for _ in 0..5{
+    for _ in 0..20{
         dec_data = priv_key.decrypt(Pkcs1v15Encrypt, &enc_data).expect("failed to decrypt");
+        let utc_now = Utc::now();
+        println!("{}.{}.{}",utc_now.second(), utc_now.timestamp_subsec_micros(), utc_now.timestamp_subsec_nanos());
     }
     println!("Done!");
     println!("{}", String::from_utf8(dec_data).unwrap());
