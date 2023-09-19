@@ -1,3 +1,5 @@
+use chrono::prelude::*;
+
 fn main() {
     let size = 10000000;
     let mut vec: Vec<i64> = vec![2; 10000000];
@@ -7,9 +9,8 @@ fn main() {
             vec[i] = x;
             let end_time = std::time::Instant::now();
             let elapsed_time = end_time - start_time;
-            println!("{}", elapsed_time.as_nanos());
+            let utc_now = Utc::now();
+            println!("{} {}.{}.{}", elapsed_time.as_nanos(), utc_now.second(), utc_now.timestamp_subsec_micros(), utc_now.timestamp_subsec_nanos());
         }
     }
 }
-
-//time total time
